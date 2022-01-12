@@ -3,18 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-// 老人的组件
-const elder_community = () => import("../views/elder/community")
-const elder_voice = () => import("../views/elder/voice")
-const elder_profile = () => import("../views/elder/profile")
-
-// 志愿者的组件
-const volunteer_home = () => import("../views/volunteer/home")
-const volunteer_org = () => import("../views/volunteer/organization")
-const volunteer_publish = () => import("../views/volunteer/publish")
-const volunteer_messages = () => import("../views/volunteer/messages")
-const volunteer_profile = () => import("../views/volunteer/profile")
-
 // 引入各个页面对应的组件
 const homepage = () => import("../views/homepage/homepage")
 const community = () => import("../views/community/community")
