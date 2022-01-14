@@ -4,7 +4,7 @@
     <router-view></router-view>
     
     <!-- 底部导航栏   -->
-    <buttom_tabbar></buttom_tabbar>
+<!--    <buttom_tabbar></buttom_tabbar>-->
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import buttom_tabbar from "./components/content/ButtomTabbar/buttom_tabbar";
 export default {
   name: 'app',
   components: {
-    buttom_tabbar
+    // buttom_tabbar
   }
 }
 </script>

@@ -19,6 +19,15 @@ const games = () => import("../views/games/games")
 const shopping = () => import("../views/shopping/shopping")
 
 const profile = () => import("../views/profile/profile")
+const profile_note1 = () => import('../views/profile/notes/profile_note1')
+const profile_note2 = () => import('../views/profile/notes/profile_note2')
+const modify_information = () => import('../views/profile/modify/infomation')
+const modify_signature = () => import('../views/profile/modify/signature')
+const more_messages = () => import('../views/profile/more/messages')
+const more_stars = () => import('../views/profile/more/stars')
+const more_wallet = () => import('../views/profile/more/wallet')
+const follow = () => import('../views/profile/follow')
+const fans = () => import('../views/profile/fans')
 
 
 const routes = [
@@ -83,6 +92,43 @@ const routes = [
     path: '/profile',
     component:profile
   },
+  {
+    path: '/profile/modify/information',
+    component:modify_information
+  },
+  {
+    path: '/profile/modify/signature',
+    component:modify_signature
+  },
+  {
+    path:"/profile/note1",
+    component:profile_note1
+  },
+  {
+    path: "/profile/note2",
+    component:profile_note2
+  },
+  {
+    path:'/profile/more/messages',
+    component:more_messages
+  },
+  {
+    path:'/profile/more/stars',
+    component:more_stars
+  },
+  {
+    path:'/profile/more/wallet',
+    component:more_wallet
+  },
+  {
+    path: '/profile/fans',
+    component:fans
+  },
+  {
+    path: '/profile/follow',
+    component:follow
+  },
+  
   
 ]
 

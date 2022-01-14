@@ -99,6 +99,9 @@
       </notes>
     </div>
     
+    <el-footer>
+      <buttom_tabbar></buttom_tabbar>
+    </el-footer>
     
   </div>
 </template>
@@ -106,6 +109,7 @@
 <script>
 import notes from "../../components/common/notes/notes";
 import notesItem from "../../components/common/notes/notesItem";
+import buttom_tabbar from "../../components/content/ButtomTabbar/buttom_tabbar";
 
 export default {
   name:'community',
@@ -116,6 +120,11 @@ export default {
       timeout:  null,
       
     };
+  },
+  components:{
+    notes,
+    notesItem,
+    buttom_tabbar
   },
   methods: {
     loadAll() {
@@ -166,10 +175,7 @@ export default {
     this.restaurants = this.loadAll();
   },
   
-  components:{
-    notes,
-    notesItem
-  }
+  
 };
 </script>
 
