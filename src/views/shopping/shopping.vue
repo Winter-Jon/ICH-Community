@@ -10,30 +10,45 @@
       </el-carousel>
     </div>
     <!-- 商品图片 -->
-    <waterfall :line-gap="200" :watch="goods">
-      <!-- each component is wrapped by a waterfall slot -->
-      <waterfall-slot
-        v-for="(item, index) in goods"
-        :ref="`btn${index}`"
-        :width="item.width"
-        :height="item.height"
-        :order="index"
-        :key="index"
-      >
-        <img :src="item.url">
-      </waterfall-slot>
-    </waterfall>
+    <div class="container-water-fall">
+      <waterfall :col="2" :data="goods" @loadmore="loadmore">
+        <template>
+          <div class="cell-item" v-for="(item,index) in goods" :key="index">
+            <img v-if="item.img" :src="item.img" alt="加载错误">
+            <div class="item-body">
+              <div class="item-desc">{{item.title}}</div>
+              <div class="item-footer">
+                <div
+                  class="avatar"
+                  :style="{backgroundImage : `url(${item.avatar})` }"
+                ></div>
+                <div class="name">{{item.user}}</div>
+                </div>
+              </div>
+            </div>
+        </template>
+      </waterfall>
+    </div>
+    <el-footer>
+      <buttom_tabbar></buttom_tabbar>
+    </el-footer>
   </div>
 </template>
 
 <script>
-import Waterfall from 'vue-waterfall/lib/waterfall';
-import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot';
+import buttom_tabbar from "../../components/content/ButtomTabbar/buttom_tabbar";
 export default {
   name: "shopping",
   components: {
-    Waterfall,
-    WaterfallSlot
+    buttom_tabbar,
+  },
+  computed:{
+    itemWidth(){
+      return (138*0.5*(document.documentElement.clientWidth/375))
+    },
+    gutterWidth(){
+      return (8*0.5*(document.documentElement.clientWidth/375))
+    }
   },
   props:{
     imgList: {
@@ -49,12 +64,15 @@ export default {
       type: Array,
       default(){
         return [
-          {url:require("@/assets/img/community/notes/com_note1.jpeg")},
-          {url:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {url:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {url:require("@/assets/img/community/notes/com_note1.jpeg")},
-          {url:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {url:require("@/assets/img/community/notes/com_note2.jpeg")},
+          {img:require("@/assets/img/community/notes/com_note1.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          {img:require("@/assets/img/community/notes/com_note2.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          {img:require("@/assets/img/community/notes/com_note3.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          {img:require("@/assets/img/community/notes/com_note1.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+
         ]
       }
     }
@@ -88,6 +106,63 @@ export default {
   max-height: 100%;
 }
 
+.container-water-fall {
+  padding: 0 0px;
+  width: 100vw;
+  box-sizing: border-box;
+  align-content: center;}
 
+.container-water-fall h4 {
+  padding-top: 56px;
+  padding-bottom: 28px;
+  font-family: PingFangSC-Medium;
+  font-size: 36px;
+  color: #000000;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.cell-item {
+  width: 100%;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 2px solid #F0F0F0;
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 2px}
+.cell-item img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.item-body {
+  border: 1px solid #F0F0F0;
+  padding: 12px;}
+.item-desc {
+  font-size: 15px;
+  color: #333333;
+  line-height: 15px;
+  font-weight: bold;
+}
+.item-footer {
+  margin-top: 22px;
+  position: relative;
+  display: flex;
+  align-items: center;}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.name {
+  max-width: 150px;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999999;
+}
 
 </style>
