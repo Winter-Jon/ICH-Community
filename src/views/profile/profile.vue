@@ -54,16 +54,16 @@
     </div>
     
     <!--  个人信息  -->
-    <div class="infomation" style=" display: inline-flex;">
+    <div class="information" style=" display: inline-flex; width: 100%;">
       <el-avatar :src="photo"></el-avatar>
-      <span style="width: 50%;  margin-left: 10%;">
-        <el-descriptions class="margin-top" title="" :column="3" direction="vertical" :colon="false">
-          <el-descriptions-item :label="num_stories">故事</el-descriptions-item>
-          <el-descriptions-item :label="num_follow" :onclick="goFollow()">关注</el-descriptions-item>
-          <el-descriptions-item :label="num_fans" :onclick="goFans()">粉丝</el-descriptions-item>
-        </el-descriptions>
-        <div style="vertical-align: middle;">
-          <button style="border-style: none" @click="modifyInformation">查看并编辑资料</button>
+      <span style="width: 60%;  margin-left: 10%; right: 0; margin-top: 10px;">
+        <div style="display: inline-flex; justify-content: space-around; width: 100%">
+          <div style="text-align: center;">{{num_stories}} <div style="text-align: center;">故事</div></div>
+          <div style="text-align: center;" @click="goFollow">{{num_follow}} <div style="text-align: center;">关注</div></div>
+          <div style="text-align: center;" @click="goFans">{{ num_fans }} <div style="text-align: center;">粉丝</div></div>
+        </div>
+        <div style="vertical-align: middle; margin-top: 10px;">
+          <button style="border-style: none; font-size: 16px;" @click="modifyInformation">查看并编辑资料</button>
         </div>
       </span>
     </div>
@@ -140,7 +140,7 @@ export default {
     return{
       num_stories:4,
       num_follow:31,
-      num_fans:331,
+      num_fans:33,
       drawer:false,
       photo:photo,
       signature:'请叫我小山，一座雄伟的山峰，孤独的树立在遥远的外太空！PLZ·Go to home》·《来自喵星球的我》喵喵~'
@@ -203,7 +203,7 @@ export default {
   }
 }
 
-.infomation{
+.information{
   margin: 5px;
   
   /deep/ .el-avatar{
@@ -212,5 +212,4 @@ export default {
   }
   
 }
-
 </style>
