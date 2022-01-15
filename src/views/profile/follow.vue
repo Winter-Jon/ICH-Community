@@ -1,13 +1,13 @@
 <template>
   <div>
     <!--  顶栏  -->
-    <div class="top-bar">
+    <div class="top-bar" style="width: 100%;">
       <el-page-header @back="goBack" content="">
       </el-page-header>
     </div>
-    
+
     <!-- 搜索栏   -->
-    <div class="top-search">
+    <div class="top-search" style="margin-top: 5%;">
       <el-autocomplete
         v-model="state"
         :fetch-suggestions="querySearchAsync"
@@ -21,28 +21,42 @@
       </el-autocomplete>
     </div>
 
-    <div>
-      <div class="customer-item">
-        <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-        <span>小佩官方旗舰店</span>
+    <br>
+
+    <!-- 粉丝列表   -->
+    <div class="fans">
+      <div class="fans-item" style="width: 100%; display: inline-flex; ">
+        <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+             style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+        <span style="margin: auto; margin-left: 15px; width: 50%;"><b>小佩官方旗舰店</b></span>
+        <button style="margin: auto; ">已关注</button>
       </div>
-      <div class="customer-item">
-        <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-        <span>小佩官方旗舰店</span>
+      <div class="fans-item" style="width: 100%; display: inline-flex; ">
+        <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+             style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+        <span style="margin: auto; margin-left: 15px; width: 50%;"><b>小佩官方旗舰店</b></span>
+        <button style="margin: auto; background-color:red; width: 60px;">关注</button>
       </div>
-      <div class="customer-item">
-        <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-        <span>小佩官方旗舰店</span>
+      <div class="fans-item" style="width: 100%; display: inline-flex; ">
+        <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+             style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+        <span style="margin: auto; margin-left: 15px; width: 50%;"><b>小佩官方旗舰店</b></span>
+        <button style="margin: auto;">已关注</button>
+      </div>
+      <div class="fans-item" style="width: 100%; display: inline-flex; ">
+        <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+             style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+        <span style="margin: auto; margin-left: 15px; width: 50%;"><b>小佩官方旗舰店</b></span>
+        <button style="margin: auto;">已关注</button>
       </div>
     </div>
-    
+
   </div>
 </template>
 
 <script>
-
 export default {
-  name: "follow",
+  name: "fans",
   data() {
     return {
       activeName: 'first',
@@ -92,6 +106,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.top-search{
+  margin: 3px;
+
+  /deep/.el-input__inner{
+    border-radius: 30px;
+    width: 100%;
+  }
+
+  /deep/.el-autocomplete{
+    width: 100%;
+  }
+
+  /deep/.el-autocomplete .el-button--primary {
+    color: #666666;
+    background-color: transparent;
+    border: 0px;
+  }
+}
 
 </style>

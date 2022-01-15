@@ -9,48 +9,23 @@
     <!-- 导航块   -->
     <div class="tab-nav">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="灯火守护者" name="first">
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
+        <el-tab-pane label="故事-1" name="first">
+          <div class="fans-item" style="width: 100%; display: inline-flex; ">
+            <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+                 style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+            <span style=" margin: auto;margin-left: 15px;"><b>小佩官方旗舰店</b></span>
           </div>
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
-          </div>
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
+          <div class="fans-item" style="width: 100%; display: inline-flex; ">
+            <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+                 style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+            <span style=" margin: auto;margin-left: 15px;"><b>小佩官方旗舰店</b></span>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="非遗产品" name="second">
+        <el-tab-pane label="故事-2" name="second">
           <notes>
-            <notes-item path="/community/note1">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note1.jpeg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note1.jpeg" alt="" style="">
-              <span slot="author_name">小佩官方旗舰店</span>
-              <p slot="note_text">
-                心水~~冬暖夏凉好惬意~
-                🐱盟主测评加盟
-              </p>
-            </notes-item>
-            <notes-item path="/community/note2">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note2.jpeg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note2.jpeg" alt="" style="">
-              <span slot="author_name">小佩官方旗舰店</span>
-              <p slot="note_text">
-                心水~~冬暖夏凉好惬意~
-                国会开幕
-                🐱盟主测评加盟
-              </p>
-            </notes-item>
-          </notes>
-        </el-tab-pane>
-        <el-tab-pane label="非遗故事" name="third">
-          <notes>
-            <notes-item path="/community/note1">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note1.jpeg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note1.jpeg" alt="" style="">
+            <notes-item path="/profile/note1">
+              <img slot="note_img" src="@/assets/img/profile/notes/profile_note1.jpeg" alt="">
+              <img slot="author_img" src="@/assets/img/profile/notes/profile_note1.jpeg" alt="" style="">
               <span slot="author_name">小佩官方旗舰店</span>
               <p slot="note_text">
                 心水~~冬暖夏凉好惬意~
@@ -58,9 +33,9 @@
               </p>
             </notes-item>
 
-            <notes-item path="/community/note2">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note2.jpeg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note2.jpeg" alt="" style="">
+            <notes-item path="/profile/note2">
+              <img slot="note_img" src="@/assets/img/profile/notes/profile_note2.jpeg" alt="">
+              <img slot="author_img" src="@/assets/img/profile/notes/profile_note2.jpeg" alt="" style="">
               <span slot="author_name">小佩官方旗舰店</span>
               <p slot="note_text">
                 心水~~冬暖夏凉好惬意~
@@ -69,9 +44,9 @@
               </p>
             </notes-item>
 
-            <notes-item path="/community">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note3.jpeg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note3.jpeg" alt="" style="">
+            <notes-item path="/profile/note1">
+              <img slot="note_img" src="@/assets/img/profile/notes/profile_note3.jpeg" alt="">
+              <img slot="author_img" src="@/assets/img/profile/notes/profile_note3.jpeg" alt="" style="">
               <span slot="author_name">小佩官方旗舰店</span>
               <p slot="note_text">
                 心水~~冬暖夏凉好惬意~
@@ -80,23 +55,13 @@
               </p>
             </notes-item>
 
-            <notes-item path="/community">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note4.png" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note4.png" alt="" style="">
+            <notes-item path="/profile/note1">
+              <img slot="note_img" src="@/assets/img/profile/notes/profile_note4.jpeg" alt="">
+              <img slot="author_img" src="@/assets/img/profile/notes/profile_note4.jpeg" alt="" style="">
               <span slot="author_name">小佩官方旗舰店</span>
               <p slot="note_text">
                 心水~~冬暖夏凉好惬意~
                 钱钱钱钱钱
-                🐱盟主测评加盟
-              </p>
-            </notes-item>
-
-            <notes-item path="/community">
-              <img slot="note_img" src="@/assets/img/community/notes/com_note5.jpg" alt="">
-              <img slot="author_img" src="@/assets/img/community/notes/com_note5.jpg" alt="" style="">
-              <span slot="author_name">小佩官方旗舰店</span>
-              <p slot="note_text">
-                心水~~冬暖夏凉好惬意~
                 🐱盟主测评加盟
               </p>
             </notes-item>
@@ -108,12 +73,19 @@
 </template>
 
 <script>
+import notes from "../../../components/common/notes/notes";
+import notesItem from "../../../components/common/notes/notesItem";
+
 export default {
   name: "more_stars",
   data(){
     return{
       activeName:'second'
     }
+  },
+  components:{
+    notes,
+    notesItem
   },
   methods:{
     goBack(){

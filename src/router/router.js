@@ -28,6 +28,7 @@ const more_stars = () => import('../views/profile/more/stars')
 const more_wallet = () => import('../views/profile/more/wallet')
 const follow = () => import('../views/profile/follow')
 const fans = () => import('../views/profile/fans')
+const wallet_withdraw = () => import('../views/profile/more/wallet_withdraw')
 
 
 const routes = [
@@ -128,6 +129,10 @@ const routes = [
     path: '/profile/follow',
     component:follow
   },
+  {
+    path: '/profile/more/wallet/withdraw',
+    component:wallet_withdraw
+  }
   
   
 ]

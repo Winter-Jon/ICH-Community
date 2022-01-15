@@ -5,7 +5,6 @@
       <el-page-header @back="goBack" content="">
       </el-page-header>
     </div>
-    
 
     <!-- 搜索栏   -->
     <div class="top-search">
@@ -22,22 +21,25 @@
         <el-button type="primary" icon="el-icon-close" slot="suffix" @click="goBack"></el-button>
       </el-autocomplete>
     </div>
-    
+   
     <!-- 导航块   -->
     <div class="tab-nav">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="灯火守护者" name="first">
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
+          <div class="fans-item" style="width: 100%; display: inline-flex; ">
+            <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+                 style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+            <span style=" margin: auto;margin-left: 15px;"><b>小佩官方旗舰店</b></span>
           </div>
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
+          <div class="fans-item" style="width: 100%; display: inline-flex; ">
+            <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+                 style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+            <span style=" margin: auto;margin-left: 15px;"><b>小佩官方旗舰店</b></span>
           </div>
-          <div class="customer-item">
-            <span><img src="@/assets/img/community/notes/com_note1.jpeg" alt="" style=""></span>
-            <span>小佩官方旗舰店</span>
+          <div class="fans-item" style="width: 100%; display: inline-flex; ">
+            <img src="@/assets/img/community/notes/com_note1.jpeg" alt=""
+                 style="width: 40px; height: 40px; border-radius: 20px; margin-left: 10px;">
+            <span style=" margin: auto;margin-left: 15px;"><b>小佩官方旗舰店</b></span>
           </div>
         </el-tab-pane>
         <el-tab-pane label="非遗产品" name="second">
