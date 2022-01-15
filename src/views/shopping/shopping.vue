@@ -9,20 +9,45 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <!-- 导航栏 -->
+    <div class="nav">
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="1">
+        <div class="nav-block">
+          <a href=""><img src="@/assets/img/community/notes/com_note1.jpeg"></a>
+        </div>
+      </el-menu-item>
+      <el-menu-item index="2">
+        <div class="nav-block">
+          <a href=""><img src="@/assets/img/community/notes/com_note1.jpeg"></a>
+        </div>
+      </el-menu-item>
+      <el-menu-item index="3">
+        <div class="nav-block">
+          <a href=""><img src="@/assets/img/community/notes/com_note1.jpeg"></a>
+        </div>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <div class="nav-block">
+          <a href=""><img src="@/assets/img/community/notes/com_note1.jpeg"></a>
+        </div>
+      </el-menu-item>
+    </el-menu>
+    </div>
     <!-- 商品图片 -->
-    <div class="container-water-fall">
-      <waterfall :col="2" :data="goods" @loadmore="loadmore">
+    <div class="container-water-fall" >
+      <waterfall :col="2" :data="goods">
         <template>
           <div class="cell-item" v-for="(item,index) in goods" :key="index">
             <img v-if="item.img" :src="item.img" alt="加载错误">
             <div class="item-body">
-              <div class="item-desc">{{item.title}}</div>
+                <div class="item-title">{{item.title}}</div>
               <div class="item-footer">
                 <div
                   class="avatar"
                   :style="{backgroundImage : `url(${item.avatar})` }"
                 ></div>
-                <div class="name">{{item.user}}</div>
+                <span class="name">{{item.user}}</span>
                 </div>
               </div>
             </div>
@@ -64,17 +89,44 @@ export default {
       type: Array,
       default(){
         return [
-          {img:require("@/assets/img/community/notes/com_note1.jpeg"),
+          { title:"1",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note1.jpeg"),
             avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {img:require("@/assets/img/community/notes/com_note2.jpeg"),
+          { title:"2",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note4.png"),
             avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {img:require("@/assets/img/community/notes/com_note3.jpeg"),
+          { title:"3",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note3.jpeg"),
             avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
-          {img:require("@/assets/img/community/notes/com_note1.jpeg"),
+          { title:"4",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note5.jpg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          { title:"1",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note1.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          { title:"2",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note4.png"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          { title:"3",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note3.jpeg"),
+            avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
+          { title:"4",
+            user:"1",
+            img:require("@/assets/img/community/notes/com_note5.jpg"),
             avatar:require("@/assets/img/community/notes/com_note2.jpeg")},
 
         ]
       }
+    },
+    methods: {
+      
     }
   }
 }
@@ -108,7 +160,7 @@ export default {
 
 .container-water-fall {
   padding: 0 0px;
-  width: 100vw;
+  width: 96vw;
   box-sizing: border-box;
   align-content: center;}
 
@@ -139,12 +191,14 @@ export default {
 }
 .item-body {
   border: 1px solid #F0F0F0;
-  padding: 12px;}
-.item-desc {
+  padding: 2px;}
+.item-title {
   font-size: 15px;
   color: #333333;
   line-height: 15px;
   font-weight: bold;
+  align-content: center;
+  alignment: center;
 }
 .item-footer {
   margin-top: 22px;
@@ -152,8 +206,8 @@ export default {
   display: flex;
   align-items: center;}
 .avatar {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -163,6 +217,21 @@ export default {
   margin-left: 10px;
   font-size: 14px;
   color: #999999;
+}
+
+.el-menu-item{
+  padding:0px 19px;
+  border: 0px;
+}
+
+.nav{
+  margin: 15px 0px;
+}
+
+.nav img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 </style>

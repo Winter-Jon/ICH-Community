@@ -1,6 +1,7 @@
 <template>
   <div>
     这里是首页面
+    
     <el-footer>
       <buttom_tabbar></buttom_tabbar>
     </el-footer>
